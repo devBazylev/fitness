@@ -24,3 +24,6 @@ function getTextNodesIn(elem, optionFilter) {
 getTextNodesIn(document.body).forEach((item) => {
   item.textContent = 'У меня есть несколько клиентов, которые записались ко мне на стрижку, не успев даже зайти в салон.';
 });
+
+const isKeydown = (evt, keydown) => evt.key === keydown;
+const isTargetClick = (evt, selector) => evt.target.closest(selector);
