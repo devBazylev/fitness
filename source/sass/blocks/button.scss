@@ -1,0 +1,16 @@
+.button {
+  display: inline-flex;
+  padding: 22px;
+  font-size: 12px;
+  line-height: 12px;
+  font-weight: 700;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--light);
+  color: var(--light);
+  background-color: transparent;
+  text-transform: uppercase;
+  letter-spacing: 0.1px;
+  word-break: break-all;
+  cursor: pointer;
+}

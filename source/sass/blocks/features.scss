@@ -1,0 +1,248 @@
+@import "../global/mixins";
+@import "../global/variables";
+
+.features {
+  display: grid;
+  grid-auto-flow: dense;
+  gap: 35px;
+  padding: 40px 0;
+  background-color: var(--white-light);
+
+  @media (min-width: $tab) {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px 30px;
+    padding: 62px calc((100vw - 678px) / 2) 61px;
+  }
+
+  @media (min-width: $desk) {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 34px 40px;
+    padding: 100px calc((100vw - 1160px) / 2) 57px;
+  }
+}
+
+.features * {
+  text-align: center;
+
+  @media (min-width: $tab) {
+    text-align: left;
+  }
+}
+
+.features__card {
+  display: grid;
+  padding: 0 calc((100vw - 230px) / 2);
+
+  @media (min-width: $tab) {
+    grid-template-columns: auto 1fr;
+    gap: 0 15px;
+    padding: 0;
+  }
+
+  @media (min-width: $desk) {
+    gap: 0 44px;
+    margin: 0 0 61px;
+  }
+}
+
+.features__title {
+  margin: 0 0 5px;
+  text-align: center;
+
+  @media (min-width: $tab) {
+    grid-column: 1/3;
+    margin: 0 0 8px;
+  }
+
+  @media (min-width: $desk) {
+    width: 1160px;
+    grid-column: 1/4;
+    margin: 0 0 16px;
+  }
+}
+
+.features__card h3 {
+  grid-area: 2/1/3/2;
+  margin: 0 0 12px;
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: 400;
+
+  @media (min-width: $tab) {
+    grid-area: 1/2/2/3;
+    margin: 0;
+    font-size: 20px;
+  }
+
+  @media (min-width: $desk) {
+    margin: 2px 0 7px;
+    font-size: 22px;
+    line-height: 22px;
+  }
+}
+
+.features__card p:nth-of-type(1) {
+  margin: 0 0 12px;
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 64px;
+  background: linear-gradient(128deg, #d10a42 0%, #0041ca 45.58%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  @media (min-width: $tab) {
+    grid-area: 1/1/3/2;
+    margin: 0;
+    font-size: 70px;
+    line-height: 70px;
+  }
+}
+
+.features__card p:nth-of-type(2) {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 22px;
+
+  @media (min-width: $tab) {
+    grid-area: 2/2/3/3;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  @media (min-width: $desk) {
+    padding-bottom: 14px;
+  }
+}
+
+.features__card span {
+  display: block;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--uncommon);
+
+  @media (min-width: $tab) {
+    line-height: 22px;
+  }
+}
+
+.features__card:nth-of-type(3n) {
+  margin: 5px 0;
+  padding: 30px calc((100vw - 170px) / 2) 27px;
+  color: var(--light);
+  background-color: var(--casual);
+
+  @media (min-width: $tab) {
+    grid-column: span 2;
+    grid-template-columns: 1fr;
+    width: 320px;
+    margin: 0 auto;
+    padding: 34px 35px;
+    gap: 6px;
+  }
+
+  @media (min-width: $desk) {
+    grid-column: span 1;
+    grid-row: span 2;
+    width: 360px;
+    margin: 0 auto 43px;
+    padding: 58px 35px 34px;
+  }
+}
+
+.features__card:nth-of-type(9n + 4),
+.features__card:nth-of-type(9n + 5),
+.features__card:nth-of-type(9n + 8) {
+  @media (min-width: $desk) {
+    position: relative;
+
+    &::before {
+      @include pseudo;
+
+      position: absolute;
+      top: -40px;
+      width: 360px;
+      height: 2px;
+      background-color: var(--red-dark-20);
+    }
+  }
+}
+
+.features__card:nth-of-type(3n) h3 {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 22px;
+
+  @media (min-width: $tab) {
+    grid-area: 2/1/3/2;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+  }
+}
+
+.features__card:nth-of-type(3n) p:nth-of-type(1) {
+  display: grid;
+  gap: 6px;
+  margin: 0 0 20px;
+  background: none;
+  background-clip: text;
+  background-color: var(--light);
+
+  @media (min-width: $tab) {
+    grid-area: 1/1/2/2;
+    gap: 26px;
+    text-align: center;
+  }
+
+  @media (min-width: $desk) {
+    gap: 1px;
+    margin: 0 0 15px;
+  }
+}
+
+.features__card:nth-of-type(3n) p:nth-of-type(2) {
+  @media (min-width: $tab) {
+    grid-area: 3/1/4/2;
+    text-align: center;
+  }
+}
+
+.features__card:nth-of-type(3n) span {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 22px;
+  color: var(--light);
+
+  @media (min-width: $tab) {
+    font-size: 24px;
+    line-height: 24px;
+    text-align: center;
+  }
+
+  @media (min-width: $desk) {
+    font-size: 26px;
+    line-height: 26px;
+  }
+}
+
+.features__card:nth-of-type(9n + 2) {
+  @media (min-width: $desk) {
+    grid-column: 3/4;
+    gap: 0 79px;
+    margin: 0 0 38px;
+  }
+}
+
+.features__card:nth-of-type(9n + 8) {
+  @media (min-width: $desk) {
+    grid-column: 2/3;
+  }
+}
+
+.features__card:nth-of-type(9n + 5) {
+  @media (min-width: $desk) {
+    gap: 0 81px;
+    margin: 0 0 37px;
+  }
+}

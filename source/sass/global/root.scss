@@ -1,0 +1,72 @@
+:root {
+  // Colors
+  --blue: #1c3374;
+  --blue-dark: #102654;
+  --blue-light: #103aae;
+  --white: #ffffff;
+  --white-light: #f8f9fc;
+  --red: #ed0233;
+  --red-dark: #d10a42;
+  --red-bright: #ff121f;
+  --black: #030a1a;
+  --blue-1: #1c3477;
+  --blue-2: #1a3578;
+  --blue-3: #003eb7;
+  --blue-4: #2e35ac;
+  --red-1: #73184b;
+  --red-2: #b4022a;
+  --grey: #787878;
+  --grey-light: #c8c9cc;
+  --grey-lighter: #e8e8e8;
+  --malevich: #000000;
+  --light-grey: #b6bdcc;
+  --sky: #6daeea;
+  --super-grey: #74819c;
+
+  // Alt color names
+  --main: var(--blue-dark);
+  --common: var(--blue-light);
+  --casual: var(--blue);
+  --light: var(--white);
+  --light-alter: var(--white-light);
+  --bright: var(--red);
+  --bright-dark: var(--red-dark);
+  --alert: var(--red-bright);
+  --rare: var(--black);
+  --rarest: var(--grey-lighter);
+  --cloudy: var(--grey);
+  --muddy: var(--grey-light);
+  --stormy: var(--light-grey);
+  --grad-1: var(--blue-1);
+  --grad-2: var(--blue-2);
+  --grad-3: var(--red-1);
+  --grad-4: var(--red-2);
+  --grad-5: var(--blue-3);
+  --uncommon: var(--blue-4);
+  --model: var(--sky);
+  --under: var(--super-grey);
+
+  // Transparent colors
+  --light-trans-30: rgba(255, 255, 255, 0.3);
+  --light-trans-40: rgba(255, 255, 255, 0.4);
+  --light-trans-50: rgba(255, 255, 255, 0.5);
+  --light-trans-70: rgba(255, 255, 255, 0.7);
+  --light-trans-80: rgba(255, 255, 255, 0.8);
+  --bright-trans-20: rgba(237, 2, 51, 0.2);
+  --bright-trans-80: rgba(237, 2, 51, 0.8);
+  --grad-5-trans-80: rgba(0, 62, 183, 0.8);
+  --main-trans-20: rgba(16, 38, 84, 0.2);
+  --main-trans-30: rgba(16, 38, 84, 0.3);
+  --main-trans-40: rgba(16, 38, 84, 0.4);
+  --main-trans-50: rgba(16, 38, 84, 0.5);
+  --main-trans-60: rgba(16, 38, 84, 0.6);
+  --main-trans-70: rgba(16, 38, 84, 0.7);
+  --cloudy-trans-20: rgba(120, 120, 120, 0.2);
+  --casual-trans-20: rgba(28, 51, 116, 0.2);
+  --casual-trans-50: rgba(28, 51, 116, 0.5);
+  --light-alter-trans-50: rgba(248, 249, 252, 0.5);
+  --shadow-trans-17: rgba(42, 59, 99, 0.17);
+  --red-dark-20: rgba(209, 10, 66, 0.2);
+  --casual-trans-30: rgba(28, 51, 116, 0.3);
+  --casual-trans-80: rgba(28, 51, 116, 0.8);
+}

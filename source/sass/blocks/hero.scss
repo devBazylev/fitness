@@ -1,0 +1,219 @@
+@import "../global/mixins";
+@import "../global/variables";
+
+.hero {
+  display: grid;
+  gap: 13px 10px;
+  grid-template-columns: 5px 115px 166px 4px;
+  grid-template-rows: repeat(auto-fit, minmax(52px, auto) minmax(70px, auto) minmax(125px, auto) minmax(94px, auto));
+  grid-auto-flow: dense;
+  align-items: end;
+  padding: 0 calc((100vw - 320px) / 2) 32px;
+  color: var(--light);
+  background: linear-gradient(90deg, var(--grad-1) 0.01%, var(--grad-2) 39.11%, var(--grad-3) 75.5%, var(--grad-4) 100%);
+
+  @media (min-width: $tab) {
+    grid-template-columns: 19px 115px 187px 327px 19px;
+    grid-template-rows: repeat(auto-fit, minmax(74px, auto) minmax(74px, auto) minmax(134px, auto) minmax(4px, auto) minmax(99px, auto) minmax(15px, auto));
+    gap: 8px 25px;
+    padding: 0 calc((100vw - 768px) / 2) 100px;
+  }
+
+  @media (min-width: $desk) {
+    grid-template-columns: 82px 265px 248px 536px 155px;
+    grid-template-rows: repeat(auto-fit, minmax(108px, auto) minmax(106px, auto) minmax(181px, auto) minmax(64px, auto) minmax(97px, auto) minmax(15px, auto));
+    gap: 8px 20px;
+    padding: 0 calc((100vw - 1366px) / 2) 120px;
+  }
+}
+
+.hero__header {
+  grid-column: 1/-1;
+  display: flex;
+  justify-content: space-between;
+  order: -2;
+}
+
+.hero__logo {
+  display: block;
+  align-self: start;
+  margin: 16px 0 0 15px;
+
+  @media (min-width: $tab) {
+    width: 110px;
+    height: 22px;
+    margin: 31px 0 0 45px;
+  }
+
+  @media (min-width: $desk) {
+    width: 130px;
+    height: 26px;
+    margin: 30px 0 0 103px;
+  }
+}
+
+.hero__phone {
+  display: block;
+  margin: 0;
+  padding: 15px;
+  font-size: 22px;
+  line-height: 22px;
+  font-weight: 700;
+  color: var(--light);
+  text-align: right;
+
+  @media (min-width: $tab) {
+    margin: 0 0 -8px auto;
+    padding: 30px 44px;
+    font-size: 24px;
+    line-height: 24px;
+  }
+
+  @media (min-width: $desk) {
+    align-self: start;
+    margin: 0 0 18px auto;
+    padding: 32px 103px;
+    font-size: 26px;
+    line-height: 26px;
+  }
+}
+
+.hero__phone span {
+  height: 30px;
+  border-bottom: 1px solid transparent;
+}
+
+.hero__title {
+  grid-column: 3/4;
+  margin: 0;
+  font-family: "Alumni-Sans", "Arial", sans-serif;
+  font-size: 62px;
+  line-height: 62px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: right;
+
+  @media (min-width: $tab) {
+    grid-row: span 2;
+    font-size: 72px;
+    line-height: 85px;
+    letter-spacing: 2px;
+  }
+
+  @media (min-width: $desk) {
+    font-size: 92px;
+    line-height: 110px;
+    letter-spacing: 4px;
+  }
+}
+
+.hero__subtitle {
+  grid-column: 3/4;
+  order: -1;
+  margin: 0;
+  padding: 0 2px;
+  text-align: right;
+
+  @media (min-width: $desk) {
+    padding: 0;
+  }
+}
+
+.hero__wrapper {
+  grid-row: span 2;
+  grid-column: 2/3;
+  padding: 0 2px 0 0;
+
+  @media (min-width: $tab) {
+    display: grid;
+    gap: 2px;
+  }
+}
+
+.hero__text {
+  display: block;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: right;
+}
+
+.hero__button {
+  grid-column: 2/4;
+  margin: 0 1px 0 0;
+
+  @media (min-width: $tab) {
+    grid-column: 3/4;
+    min-height: 56px;
+    margin: 0 2px 0 0;
+    padding: 20px;
+  }
+
+  @media (min-width: $desk) {
+    grid-column: 2/4;
+    width: 270px;
+    min-height: 64px;
+    margin: 0 0 0 auto;
+    padding: 26px 25px 24px;
+  }
+}
+
+.hero__picture {
+  display: none;
+  background-color: var(--main);
+
+  @media (min-width: $tab) {
+    grid-column: 4/5;
+    grid-row: span 5;
+    display: block;
+    margin: 0 0 0 3px;
+  }
+
+  @media (min-width: $desk) {
+    margin: 0 0 0 36px;
+  }
+}
+
+.hero__image {
+  display: block;
+}
+
+.hero__phone:hover {
+  color: var(--casual-trans-50);
+}
+
+.hero__phone:focus {
+  color: var(--casual);
+}
+
+.hero__phone:active span {
+  color: var(--main);
+  box-shadow: 0 2px 0 0 var(--main);
+}
+
+.hero__phone:disabled,
+.hero__phone--disabled {
+  color: var(--light-alter-trans-50);
+}
+
+.hero__button:hover {
+  color: var(--common);
+  background-color: var(--light);
+}
+
+.hero__button:focus {
+  color: var(--common);
+  background-color: var(--light-trans-80);
+  border: 2px solid var(--malevich);
+}
+
+.hero__button:active {
+  color: var(--main);
+  background-color: var(--light);
+}
+
+.hero__button:disabled,
+.hero__button--disabled {
+  color: var(--light-trans-50);
+  border: 2px solid var(--light-trans-50);
+}

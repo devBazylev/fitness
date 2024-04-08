@@ -1,0 +1,322 @@
+@import "../global/mixins";
+@import "../global/variables";
+
+.offers {
+  padding: 40px 0;
+
+  @media (min-width: $tab) {
+    padding: 60px 0;
+  }
+
+  @media (min-width: $desk) {
+    padding: 100px 0;
+  }
+}
+
+.offers__title {
+  margin: 0 auto 40px;
+  padding: 0 20px;
+  text-align: center;
+
+  @media (min-width: $tab) {
+    margin: 0 auto 34px;
+  }
+
+  @media (min-width: $desk) {
+    margin: 0 auto 70px;
+  }
+}
+
+.offers__container {
+  margin: 0 auto;
+
+  @media (min-width: $tab) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px 30px;
+    width: 678px;
+    min-height: 462px;
+  }
+
+  @media (min-width: $desk) {
+    gap: 29px 40px;
+    grid-template-rows: repeat(auto-fit, minmax(254px, auto) minmax(174px, auto));
+    width: 1160px;
+    min-height: 460px;
+  }
+}
+
+.offers__wrapper {
+  margin: 0 auto 40px;
+
+  @media (min-width: $tab) {
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: 278px 400px;
+    margin: 0 auto;
+  }
+
+  @media (min-width: $desk) {
+    grid-column: span 1;
+    grid-row: span 2;
+    grid-template-columns: 1fr 1fr;
+    margin: 0;
+  }
+}
+
+.offers__info {
+  display: grid;
+  grid-template-rows: repeat(auto-fit, minmax(30px, auto) minmax(92px, auto) minmax(63px, auto));
+  padding: 31px 30px 30px;
+  color: var(--light);
+  background-color: var(--bright);
+  text-align: center;
+
+  @media (min-width: $tab) {
+    display: grid;
+    grid-template-rows: repeat(auto-fit, minmax(44px, auto) minmax(110px, auto) minmax(204px, auto));
+    padding: 40px 25px 39px;
+    text-align: left;
+  }
+
+  @media (min-width: $desk) {
+    grid-template-rows: repeat(auto-fit, minmax(46px, auto) minmax(110px, auto) minmax(200px, auto));
+    padding: 40px 45px 39px;
+  }
+}
+
+.offers__info > span:nth-of-type(1) {
+  display: block;
+  margin: 0 auto;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 22px;
+
+  @media (min-width: $tab) {
+    margin: 0 auto 0 0;
+    font-size: 24px;
+    line-height: 24px;
+  }
+
+  @media (min-width: $desk) {
+    font-size: 26px;
+    line-height: 26px;
+  }
+}
+
+.offers__info > span:nth-of-type(2) {
+  display: block;
+  margin: 0 auto;
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 64px;
+
+  @media (min-width: $tab) {
+    margin: 0 auto 0 0;
+    font-size: 70px;
+    line-height: 70px;
+  }
+}
+
+.offers__info h3 {
+  margin: 0 auto;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 20px;
+
+  @media (min-width: $tab) {
+    margin: 0 auto 0 0;
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+
+.offers__link {
+  display: block;
+  min-width: 99px;
+  margin: 0 auto;
+  padding: 0 10px;
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 700;
+  color: var(--casual);
+  background: transparent;
+  text-transform: uppercase;
+  text-align: center;
+  border: 1px solid transparent;
+  cursor: pointer;
+
+  @media (min-width: $tab) {
+    position: relative;
+    bottom: 1px;
+    right: 13px;
+    margin: 0 auto 0 0;
+    align-self: end;
+  }
+}
+
+.offers__link--light {
+  color: var(--light);
+}
+
+.offers__link span {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  padding: 4px 0;
+  border-bottom: 1px solid var(--casual);
+}
+
+.offers__link--light span {
+  border-bottom: 1px solid var(--light);
+}
+
+.offers__picture {
+  width: 320px;
+  height: 360px;
+  margin: 0 auto;
+  background-color: var(--model);
+
+  @media (min-width: $tab) {
+    width: 400px;
+    height: 462px;
+  }
+
+  @media (min-width: $desk) {
+    width: 280px;
+    height: 460px;
+  }
+}
+
+.offers__image {
+  display: block;
+}
+
+.offers__card {
+  width: 290px;
+  min-height: 158px;
+  margin: 0 auto 30px;
+  padding: 21px 20px 20px;
+  text-align: center;
+  border-width: 7px;
+  border-style: solid;
+  border-image: linear-gradient(150deg, var(--bright-dark), var(--grad-5)) 1;
+
+  @media (min-width: $tab) {
+    display: grid;
+    gap: 5px;
+    grid-template-rows: repeat(auto-fit, minmax(31px, auto) minmax(55px, auto) minmax(39px, auto));
+    width: 100%;
+    min-height: 188px;
+    margin: 0;
+    padding: 20px 20px 19px;
+    text-align: left;
+  }
+
+  @media (min-width: $desk) {
+    grid-template-rows: repeat(auto-fit, minmax(25px, auto) minmax(45px, auto) minmax(19px, auto));
+    align-self: end;
+    width: 560px;
+    min-height: 174px;
+  }
+}
+
+.offers__card:last-child {
+  margin: 0 auto;
+
+  @media (min-width: $tab) {
+    margin: 0;
+  }
+}
+
+.offers__card h3 {
+  margin: 0 auto 20px;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 22px;
+
+  @media (min-width: $tab) {
+    margin: 0 auto 0 0;
+    font-size: 26px;
+    line-height: 26px;
+  }
+}
+
+.offers__card p {
+  margin: 0 auto 14px;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 22px;
+
+  @media (min-width: $tab) {
+    margin: 0 auto 0 0;
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+.offers__link:hover {
+  color: var(--casual-trans-80);
+}
+
+.offers__link:hover span {
+  border-bottom: 1px solid var(--casual-trans-80);
+}
+
+.offers__link:focus {
+  color: var(--casual);
+  border: 1px solid var(--casual);
+}
+
+.offers__link:focus span {
+  border-bottom: 1px solid transparent;
+}
+
+.offers__link:active {
+  color: var(--casual);
+}
+
+.offers__link:active span {
+  border-bottom: 1px solid var(--casual);
+}
+
+.offers__link:disabled,
+.offers__link--disabled {
+  color: var(--casual-trans-30);
+}
+
+.offers__link:disabled span,
+.offers__link--disabled span {
+  border-bottom: 1px solid var(--casual-trans-30);
+}
+
+.offers__link--light:hover {
+  color: var(--light-trans-80);
+}
+
+.offers__link--light:hover span {
+  border-bottom: 1px solid var(--light-trans-80);
+}
+
+.offers__link--light:focus {
+  color: var(--light);
+  border: 1px solid var(--light);
+}
+
+.offers__link--light:active {
+  color: var(--light);
+}
+
+.offers__link--light:active span {
+  border-bottom: 1px solid var(--light);
+}
+
+.offers__link--light:disabled,
+.offers__link--light--disabled {
+  color: var(--light-trans-50);
+}
+
+.offers__link--light:disabled span,
+.offers__link--light--disabled span {
+  border-bottom: 1px solid var(--light-trans-50);
+}

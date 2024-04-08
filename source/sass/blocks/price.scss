@@ -1,0 +1,397 @@
+@import "../global/mixins";
+@import "../global/variables";
+
+.price {
+  padding: 41px calc((100vw - 290px) / 2) 40px;
+  background-color: var(--light-alter);
+
+  @media (min-width: $tab) {
+    padding: 61px calc((100vw - 380px) / 2) 59px;
+    background-repeat: no-repeat;
+    background-size: 338px 300px;
+    background-position: calc((100vw - 380px) / 2 + 282px) 1405px;
+
+    .no-webp & {
+      background-image: url("../../img/rogue-tab@1x.png");
+    }
+
+    .webp & {
+      background-image: url("../../img/rogue-tab@1x.webp");
+    }
+
+    @media (resolution >= 2dppx) {
+      .no-webp & {
+        background-image: url("../../img/rogue-tab@2x.png");
+      }
+
+      .webp & {
+        background-image: url("../../img/rogue-tab@2x.webp");
+      }
+    }
+  }
+
+  @media (min-width: $desk) {
+    padding: 100px calc((100vw - 1160px) / 2) 99px;
+    background-size: 392px 351px;
+    background-position: calc((100vw - 1160px) / 2 + 999px) 417px;
+
+    .no-webp & {
+      background-image: url("../../img/rogue-desk@1x.png");
+    }
+
+    .webp & {
+      background-image: url("../../img/rogue-desk@1x.webp");
+    }
+
+    @media (resolution >= 2dppx) {
+      .no-webp & {
+        background-image: url("../../img/rogue-desk@2x.png");
+      }
+
+      .webp & {
+        background-image: url("../../img/rogue-desk@2x.webp");
+      }
+    }
+  }
+}
+
+.price__title {
+  text-align: center;
+  margin: 0 auto 11px;
+
+  @media (min-width: $tab) {
+    margin: 0 auto 30px;
+  }
+
+  @media (min-width: $desk) {
+    margin: 0 auto 12px;
+  }
+}
+
+.price__tab-wrapper {
+  position: relative;
+  grid-area: 2/2/3/3;
+  display: flex;
+  justify-content: space-between;
+  width: 290px;
+  min-height: 35px;
+  margin: 0 auto 30px;
+
+  @media (min-width: $tab) {
+    width: 315px;
+    min-height: 27px;
+    margin: 0 auto 45px;
+  }
+
+  @media (min-width: $desk) {
+    width: 350px;
+    min-height: 30px;
+    margin: 0 auto 40px;
+  }
+}
+
+.price__tab-wrapper::after {
+  @include pseudo;
+
+  position: absolute;
+  top: 51px;
+  width: 100%;
+  height: 2px;
+  background-color: var(--cloudy-trans-20);
+
+  @media (min-width: $tab) {
+    top: 30px;
+  }
+
+  @media (min-width: $desk) {
+    top: 36px;
+  }
+}
+
+.price__tab {
+  display: block;
+  padding: 0 15px;
+  width: fit-content;
+  border: none;
+  font-size: 16px;
+  line-height: 16px;
+  color: var(--main-trans-50);
+  background-color: transparent;
+  word-break: break-all;
+  cursor: pointer;
+
+  @media (min-width: $tab) {
+    font-size: 18px;
+    line-height: 18px;
+  }
+
+  @media (min-width: $desk) {
+    font-size: 20px;
+    line-height: 20px;
+  }
+}
+
+.price__tab--first {
+  position: relative;
+  right: 15px;
+
+  @media (min-width: $tab) {
+    right: 13px;
+  }
+
+  @media (min-width: $desk) {
+    right: 15px;
+  }
+}
+
+.price__tab--last {
+  position: relative;
+  left: 13px;
+}
+
+.price__tab span {
+  display: inline-block;
+  padding: 18px 0 17px;
+  border-bottom: 2px solid transparent;
+
+  @media (min-width: $tab) {
+    padding: 6px 0;
+  }
+
+  @media (min-width: $desk) {
+    padding: 8px 0;
+  }
+}
+
+
+.price__tab--active span {
+  color: var(--main);
+  border-bottom: 2px solid var(--bright-dark);
+}
+
+.price__card-wrapper {
+  z-index: 1;
+  grid-area: 3/2/4/3;
+  display: grid;
+  width: 290px;
+  gap: 36px;
+
+  @media (min-width: $tab) {
+    width: 380px;
+    gap: 41px;
+  }
+
+  @media (min-width: $desk) {
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    min-width: 1160px;
+    max-width: 1600px;
+    gap: 40px;
+  }
+}
+
+.price__card {
+  padding: 43px 25px;
+  background-color: var(--light);
+  border: 7px solid transparent;
+
+  @media (min-width: $tab) {
+    padding: 58px 25px;
+  }
+
+  @media (min-width: $desk) {
+    min-width: 360px;
+    padding: 58px 25px;
+  }
+}
+
+.price__card:hover,
+.price__card:focus-within {
+  border-width: 7px;
+  border-style: solid;
+  border-image: linear-gradient(150deg, var(--bright-dark), var(--grad-5)) 1;
+}
+
+.price__subtitle {
+  margin: 0 0 18px;
+  font-size: 22px;
+  line-height: 22px;
+  font-weight: 700;
+  text-align: center;
+
+  @media (min-width: $tab) {
+    margin: 0 0 22px;
+    font-size: 24px;
+    line-height: 24px;
+  }
+
+  @media (min-width: $desk) {
+    margin: 0 0 19px;
+    font-size: 26px;
+    line-height: 26px;
+  }
+}
+
+.price__text {
+  margin: 0 0 18px;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 300;
+  text-align: center;
+
+  @media (min-width: $tab) {
+    margin: 0 0 16px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  @media (min-width: $desk) {
+    margin: 0 auto 11px;
+  }
+}
+
+.price__numbers {
+  display: grid;
+  min-height: 150px;
+  margin: 0 auto 17px;
+
+  @media (min-width: $tab) {
+    margin: 0 auto 22px;
+  }
+
+  @media (min-width: $desk) {
+    margin: 0 auto 19px;
+  }
+}
+
+.price__numbers * {
+  grid-area: 1/1/2/2;
+  display: block;
+}
+
+.price__background-number {
+  margin: 13px auto 0;
+  font-size: 80px;
+  line-height: 150%;
+  font-weight: 700;
+  color: var(--rarest);
+  opacity: 0.48;
+
+  @media (min-width: $tab) {
+    margin: 5px auto 0;
+    font-size: 100px;
+  }
+
+  @media (min-width: $desk) {
+    margin: 4px auto 0;
+    opacity: 0.47;
+  }
+}
+
+.price__real-number {
+  z-index: 1;
+  margin: 56px auto 0;
+  font-size: 48px;
+  line-height: 150%;
+  font-weight: 700;
+  text-align: center;
+  color: var(--common);
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+
+  @media (min-width: $tab) {
+    margin: 66px auto 0;
+    gap: 14px;
+    font-size: 60px;
+  }
+}
+
+.price__real-number::after {
+  @include pseudo;
+
+  position: relative;
+  top: 1px;
+  width: 24px;
+  height: 34px;
+  background-image: url("/__spritemap#sprite-rubl-view");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+  @media (min-width: $tab) {
+    top: 0;
+    width: 30px;
+    height: 42px;
+    background-position: 50% 50%;
+  }
+}
+
+.price__button {
+  display: block;
+  width: 195px;
+  min-height: 66px;
+  margin: 0 auto;
+  padding: 25px;
+  color: var(--main);
+  border: 2px solid var(--main);
+  text-align: center;
+
+  @media (min-width: $tab) {
+    width: 250px;
+  }
+
+  @media (min-width: $desk) {
+    width: 195px;
+  }
+}
+
+.price__card:hover .price__button {
+  background: linear-gradient(97deg, var(--bright) 17.6%, var(--grad-5) 95.31%);
+  border: none;
+  color: var(--light);
+}
+
+.price__button:hover {
+  background: linear-gradient(97deg, var(--bright) 17.6%, var(--grad-5) 95.31%);
+  border: none;
+  color: var(--light);
+}
+
+.price__button:focus {
+  background: linear-gradient(97deg, var(--bright-trans-80) 17.6%, var(--grad-5-trans-80) 95.31%);
+  border: 2px solid var(--malevich);
+  color: var(--light);
+}
+
+.price__button:active {
+  background: linear-gradient(97deg, var(--bright) 17.6%, var(--grad-5) 95.31%);
+  border: none;
+  color: var(--light-trans-70);
+}
+
+.price__button:disabled,
+.price__button--disabled {
+  border: 2px solid var(--main-trans-30);
+  color: var(--main-trans-30);
+}
+
+.price__tab:hover span {
+  color: var(--main-trans-70);
+  border-bottom: 2px solid var(--main-trans-70);
+}
+
+.price__tab:focus span {
+  color: var(--main);
+  border-bottom: 2px solid var(--main);
+}
+
+.price__tab:active span {
+  color: var(--main);
+  border-bottom: 2px solid var(--bright-dark);
+}
+
+.price__tab:disabled span {
+  color: var(--main-trans-30);
+  border-bottom: 2px solid var(--main-trans-30);
+}
