@@ -27,3 +27,12 @@ getTextNodesIn(document.body).forEach((item) => {
 
 const isKeydown = (evt, keydown) => evt.key === keydown;
 const isTargetClick = (evt, selector) => evt.target.closest(selector);
+
+async function request(url, method = httpMethod.GET, body = null) {
+  const response = await fetch(url, { method, body });
+  if(!response.ok) {
+    throw new Error(ErrorText[method]);
+  }
+
+  return response.json();
+}
