@@ -1,14 +1,4 @@
-@mixin font($font_name, $file_name, $weight: 400, $style: normal) {
-  @font-face {
-    font-family: $font_name;
-    font-style: #{$style};
-    font-weight: #{$weight};
-    src:
-      url("../fonts/#{to-lower-case($font_name)}/#{$file_name}.woff2") format("woff2"),
-      url("../fonts//#{to-lower-case($font_name)}/#{$file_name}.woff") format("woff");
-    font-display: swap;
-  }
-}
+@import "../global/mixins";
 
 @include font("Roboto-Condensed", roboto-condensed-light, 300);
 @include font("Roboto-Condensed", roboto-condensed-regular, 400);
