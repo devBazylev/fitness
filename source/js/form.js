@@ -27,6 +27,7 @@ const validateLetters = (name) => {
 
 const validateNumbers = (phone) => {
   const reg = /^[+0-9][-0-9()\s]*$/;
+  // const reg = /\+?[0-9\s\-()]+/g; чекнуть
   return reg.test(String(phone));
 };
 
