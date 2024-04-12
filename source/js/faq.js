@@ -9,6 +9,7 @@ const paragraphes = Array.from(faq.querySelectorAll('.faq__accordion p'));
 
 let tabId = 0;
 let accordId = 0;
+let activeTabArray;
 
 const greatArray = [
   [{opened: true, title: 'Как стать членом фитнес-центра?', paragraph: 'При первом посещении и покупке абонемента, необходимо заполнить анкету и подписать договор. При покупке абонемента онлайн, анкета также заполняется онлайн и договор придёт вам на почту.'},
@@ -32,24 +33,25 @@ const greatArray = [
 setDataId(tabs);
 setDataId(buttons);
 
+const setActiveTabArray = () => {
+  activeTabArray = greatArray[tabId];
+};
+
 const changeTitlesText = () => {
   for (let i = 0; i < titles.length; i++) {
-    const array = greatArray[tabId];
-    titles[i].textContent = array[i].title;
+    titles[i].textContent = activeTabArray[i].title;
   }
 };
 
 const changeParagraphsText = () => {
   for (let i = 0; i < paragraphes.length; i++) {
-    const array = greatArray[tabId];
-    paragraphes[i].textContent = array[i].paragraph;
+    paragraphes[i].textContent = activeTabArray[i].paragraph;
   }
 };
 
 const changeAccordionState = () => {
   for (let i = 0; i < accordions.length; i++){
-    const array = greatArray[tabId];
-    if (array[i].opened) {
+    if (activeTabArray[i].opened) {
       accordions[i].classList.add('faq__accordion--opened');
     } else {
       accordions[i].classList.remove('faq__accordion--opened');
@@ -73,6 +75,7 @@ const onTab = function () {
   if (tabId !== +this.getAttribute('data-id')) {
     tabId = +this.getAttribute('data-id');
     setClass(tabs, 'faq__tab--active', tabId);
+    setActiveTabArray();
     changeTitlesText();
     changeParagraphsText();
     changeAccordionState();
