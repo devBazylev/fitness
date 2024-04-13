@@ -37,14 +37,9 @@ const setActiveTabArray = () => {
   activeTabArray = greatArray[tabId];
 };
 
-const changeTitlesText = () => {
-  for (let i = 0; i < titles.length; i++) {
+const changeText = () => {
+  for (let i = 0; i < accordions.length; i++) {
     titles[i].textContent = activeTabArray[i].title;
-  }
-};
-
-const changeParagraphsText = () => {
-  for (let i = 0; i < paragraphes.length; i++) {
     paragraphes[i].textContent = activeTabArray[i].paragraph;
   }
 };
@@ -76,9 +71,8 @@ const onTab = function () {
     tabId = +this.getAttribute('data-id');
     setClass(tabs, 'faq__tab--active', tabId);
     setActiveTabArray();
-    changeTitlesText();
-    changeParagraphsText();
     changeAccordionState();
+    changeText();
   }
 };
 
