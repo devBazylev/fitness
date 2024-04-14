@@ -20,3 +20,20 @@
     font-display: swap;
   }
 }
+
+@mixin flex {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+@mixin grid($first-column: 1fr, $second-column: null, $third-column: null, $fourth-column: null, $fifth-column: null, $sixth-column: null, $seventh-column: null, $eighth-column: null, $nineth-column: null, $tenth-column: null, $gap: 5px) {
+  display: grid;
+  grid-template-columns: $first-column, $second-column, $third-column, $fourth-column, $fifth-column, $sixth-column, $seventh-column, $eighth-column, $nineth-column, $tenth-column;
+  gap: $gap;
+  // gap: #{$gap};
+}
+
+@mixin btn {
+  width: 100%;
+}
