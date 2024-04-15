@@ -9,6 +9,12 @@
   display: $display;
 }
 
+// @mixin pseudo($position: static, $display: block, $content: "") {
+//   content: $content;
+//   position: #{$position};
+//   display: $display;
+// }
+
 @mixin font($font_name, $file_name, $weight: 400, $style: normal) {
   @font-face {
     font-family: $font_name;
@@ -34,6 +40,44 @@
   // gap: #{$gap};
 }
 
-@mixin btn {
+@mixin size($font-size: 12px, $line-height: 12px, $font-weight: 400) {
+  font-size: $font-size;
+  line-height: $line-height;
+  font-weight: #{$font-weight};
+}
+
+@mixin btn($color: yellow, $bg-color: black, $hover-color: yellow, $hover-bg-color: black, $focus-color: yellow, $focus-bg-color: black, $active-color: yellow, $active-bg-color: black, $disabled-color: yellow, $disabled-bg-color: black, $display: block) {
+  display: $display;
   width: 100%;
+  padding: 20px 25px;
+  text-align: center;
+  vertical-align: middle;
+  border: 2px solid transparent;
+  color: $color;
+  background-color: $bg-color;
+  text-transform: uppercase;
+  letter-spacing: 0.1px;
+  word-break: break-all;
+  transition: 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    color: $hover-color;
+    background-color: $hover-bg-color;
+  }
+
+  &:focus {
+    color: $focus-color;
+    background-color: $focus-bg-color;
+  }
+
+  &:active {
+    color: $active-color;
+    background-color: $active-bg-color;
+  }
+
+  &:disabled {
+    color: $disabled-color;
+    background-color: $disabled-bg-color;
+  }
 }
