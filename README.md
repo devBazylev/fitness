@@ -1,5 +1,5 @@
-# Проект Fitness
+# Project Fitness
+Among libraries is used swiper. 2 sliders realized by it
 
-Из сторонних библиотек использован swiper
-
-На его основе реализовано 2 слайдера
+## Here is a link to github pages with this project
+https://devbazylev.github.io/fitness/
